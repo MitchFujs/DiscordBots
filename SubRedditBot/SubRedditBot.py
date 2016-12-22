@@ -3,7 +3,6 @@ import asyncio
 import re
 
 client = discord.client()
-regex = re.compile("\/?r\/[a-Z\_]+")
 
 @client.event
 async def on_ready():
@@ -17,11 +16,20 @@ async def on_message(message):
 		return
 	
 	if message.content.startswith('!subreddit'):
-		msg = 'Hello, this bot provides links to subreddits when people enter text of the format /r/x or r/x'.format(message)
+		msg = 'Hello, this bot provides links to subreddits when users enter text of the format /r/x or r/x'.format(message)
 		await client.send_message(message.channel, msg)
 
-	searchMsg = regex.match(message.content)
-	if searchMsg:
-		msg = ('You posted a subreddit in chat, here\'s a quick link to it: \nhttp://www.reddit.com', searchMsg.group()).format(message)
+	searchMsg = re.findall("\/?r\/[a-Z_]+", message.content)
+	if !searchMsg:
+		return
+	else
+		msg = ('You posted a subreddit in chat, here\'s a quick link to it: \n'
+		for s in searchMsg:
+			if s[0] = '/':
+				msg += 'http://www.reddit.com' + s + '\n'
+			else
+				msg += 'http://www.reddit.com/' + s + '\n'
+		
 		await client.send_message(message.channel, msg)
 	
+client.run('MjYxNDA3NjE0MDMyNjc0ODE4.Cz3aog.w_LlXj5kl_x6RfhZLDFkbKPurP4')
