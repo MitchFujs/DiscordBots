@@ -20,7 +20,7 @@ async def on_message(message):
 		await client.send_message(message.channel, msg)
 
 	searchMsg = re.findall("\/?r\/[a-Z_]+", message.content)
-	if !searchMsg:
+	if not searchMsg:
 		return
 	else
 		msg = ('You posted a subreddit in chat, here\'s a quick link to it: \n'
