@@ -22,12 +22,12 @@ async def on_message(message):
 	searchMsg = re.findall("\/?r\/[a-Z_]+", message.content)
 	if not searchMsg:
 		return
-	else
-		msg = ('You posted a subreddit in chat, here\'s a quick link to it: \n'
+	else:
+		msg = ('You posted a subreddit in chat, here\'s a quick link to it: \n')
 		for s in searchMsg:
 			if s[0] = '/':
 				msg += 'http://www.reddit.com' + s + '\n'
-			else
+			else:
 				msg += 'http://www.reddit.com/' + s + '\n'
 		
 		await client.send_message(message.channel, msg)
