@@ -12,7 +12,7 @@ async def on_ready():
 	
 @client.event
 async def on_message(message):
-	if message.authot == client.user:
+	if message.author == client.user:
 		return
 	
 	if message.content.startswith('!subreddit'):
