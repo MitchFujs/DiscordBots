@@ -19,7 +19,7 @@ async def on_message(message):
 		msg = 'Hello, this bot provides links to subreddits when users enter text of the format /r/x or r/x'.format(message)
 		await client.send_message(message.channel, msg)
 
-	searchMsg = re.findall("\/?r\/[A-z_]+", message.content)
+	searchMsg = re.findall("\/?r\/[A-z_+]+", message.content)
 	if not searchMsg:
 		return
 	else:
