@@ -6,9 +6,9 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-	print('-------------------------')
+	print('-------------------')
 	print('SubReddit Bot here!')
-	print('-------------------------')
+	print('-------------------')
 	
 @client.event
 async def on_message(message):
